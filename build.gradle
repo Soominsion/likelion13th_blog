@@ -9,11 +9,8 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	toolchain {
-<<<<<<< HEAD
 		languageVersion = JavaLanguageVersion.of(17)
-=======
-		languageVersion = JavaLanguageVersion.of(21)
->>>>>>> e2b906c1f36979e633bef680d13af3e1c745c5de
+
 	}
 }
 
@@ -22,14 +19,12 @@ repositories {
 }
 
 dependencies {
-<<<<<<< HEAD
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
-=======
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
->>>>>>> e2b906c1f36979e633bef680d13af3e1c745c5de
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

@@ -37,6 +37,15 @@ public class ArticleController {
                 .body(articles);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Article> getArticle(@PathVariable Long id){
+        Article article=articleService.findById( id );
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(article);
+
+    }
+
 
 }
 
