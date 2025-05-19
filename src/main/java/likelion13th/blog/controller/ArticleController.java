@@ -3,6 +3,7 @@ package likelion13th.blog.controller;
 
 //import com.likelion.BlogProject.Domain.Article;
 import likelion13th.blog.domain.Article;
+import likelion13th.blog.service.ArticleService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,34 +14,27 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/article")
+@RequestMapping("/articles")
 public class ArticleController {
-    private final List<Article> articleDB = new ArrayList<>();
-    private  Long nextId = 1L;
+
+    private ArticleService articleService;
+    public ArticleController(ArticleService articleService) {
+        this.articleService = articleService;
+    }
 
     @PostMapping()
     public ResponseEntity<Article> createArticle(@RequestBody Article article){
-
-
-        Article newArticle = new Article(
-                article.getContent(),
-                nextId++,
-                article.getTitle(),
-                article.getAuthor(),
-                article.getPassword()
-        );
-
-        articleDB.add(newArticle);
-
+        Article newArticle = articleService.addArticle(article);
         return  ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(newArticle);
     }
     @GetMapping()
     public ResponseEntity<List<Article>> getArticle(){
+        List<Article> articles=articleService.findAll();
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(articleDB);
+                .body(articles);
     }
 
 

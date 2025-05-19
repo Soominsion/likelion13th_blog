@@ -33,4 +33,8 @@ public class ArticleService {
         articleDB.add(newArticle);
         return newArticle;
     }
+    public List<Article> findAll(){
+        //임시 DB 반환
+        return articleDB;
+    }
 }
