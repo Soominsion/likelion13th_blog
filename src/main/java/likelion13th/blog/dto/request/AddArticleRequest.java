@@ -1,4 +1,4 @@
-package likelion13th.blog.dto;
+package likelion13th.blog.dto.request;
 
 
 import likelion13th.blog.domain.Article;
@@ -24,6 +24,7 @@ public class AddArticleRequest {
                 .author(author)
                 .password(password)
                 .createdAt(LocalDateTime.now())
+                .commentCount(0)
                 .build();
     }
 }
