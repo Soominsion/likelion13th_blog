@@ -7,6 +7,7 @@ import likelion13th.blog.domain.Article;
 import likelion13th.blog.dto.request.AddArticleRequest;
 import likelion13th.blog.dto.request.DeleteRequest;
 import likelion13th.blog.dto.request.UpdateArticleRequest;
+import likelion13th.blog.dto.response.ArticleDetailResponse;
 import likelion13th.blog.dto.response.ArticleResponse;
 import likelion13th.blog.dto.response.CommentResponse;
 import likelion13th.blog.dto.response.SimpleArticleResponse;
